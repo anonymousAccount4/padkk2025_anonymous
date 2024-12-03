@@ -6,7 +6,6 @@ import h5py
 import matplotlib.pyplot as plt
 import numpy as np
 import script_utils
-import seaborn as sn
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -134,14 +133,14 @@ def main():
             args.mot_feat_file,
             args.text_feat_file,
             data_dir,
-            "./SH_Train_OCC.txt",
+            osp.join(data_dir, "./SH_Train_OCC.txt"),
         )
         test_dataset = SHT_Feature_Track_Dataset(
             args.vis_feat_file,
             args.mot_feat_file,
             args.text_feat_file,
             data_dir,
-            "./SH_Test_OCC.txt",
+            osp.join(data_dir, "./SH_Test_OCC.txt"),
         )
 
     elif args.dataset == "ubnormal":
